@@ -1,7 +1,7 @@
 import styled from 'styled-components';
 import Head from 'next/head';
 import { Anchor } from '../components/Header';
-import Link from 'next/Link';
+import Link from 'next/link';
 import { useEffect, useRef, useState } from 'react';
 import GLOBE from 'vanta/dist/vanta.globe.min';
 import * as THREE from 'three';
