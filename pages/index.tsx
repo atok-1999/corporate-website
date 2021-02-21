@@ -46,80 +46,73 @@ export default function Home() {
 
       <Main ref={vantaRef}>
         <Mission>
-          <h1 style={{ fontSize: '3rem' }}>
+          <h1 style={{ fontSize: '3.5rem' }}>
             Connecting people with our products
           </h1>
+
           <p>人と人をモノで繋ぐをミッションに私たちは活動しています。</p>
         </Mission>
       </Main>
 
-      <AboutSection>
-        <div
-          style={{
-            position: 'absolute',
-            top: '5%',
-            left: '0%',
-            marginLeft: 24,
-          }}
-        >
-          <Fade top>
-            <SectionTitle>About us</SectionTitle>
-          </Fade>
-        </div>
-
-        <div style={{ maxWidth: '90%', textAlign: 'center' }}>
-          <Fade top>
-            <Image src='/images/hand-shake.png' width={200} height={200} />
-          </Fade>
-          <p>
-            良いモノだけど、知られていないものがある。
-            良いモノだけど、伝わりにくいものがある。
-            良いモノだけど、隠れてしまっているものがある。 私たちは、
-            そんな可能性を秘めた原石を みつけ、みがき、ひろげ、
-            人(生産者)と人(消費者)をモノでつなぐ、Company Nameです。
-          </p>
-        </div>
-        <div style={{ marginTop: 35 }}>
-          <Link href={'about/'}>
-            <Anchor>READ MORE</Anchor>
-          </Link>
+      <AboutSection isWide={isWide}>
+        <div style={{ width: '90%', margin: '0 auto' }}>
+          <div style={{ marginLeft: isWide ? 24 : 0 }}>
+            <Fade top>
+              <SectionTitle>About us</SectionTitle>
+            </Fade>
+          </div>
+          <About isWide={isWide}>
+            <Fade top>
+              <Image src='/images/hand-shake.png' width={200} height={200} />
+            </Fade>
+            <p>
+              良いモノだけど、知られていないものがある。
+              良いモノだけど、伝わりにくいものがある。
+              良いモノだけど、隠れてしまっているものがある。 私たちは、
+              そんな可能性を秘めた原石を みつけ、みがき、ひろげ、
+              人(生産者)と人(消費者)をモノでつなぐ、Company Nameです。
+            </p>
+            <div style={{ marginTop: 35 }}>
+              <Link href={'about/'}>
+                <Anchor>READ MORE</Anchor>
+              </Link>
+            </div>
+          </About>
         </div>
       </AboutSection>
 
-      <CenterCotentContainer isWide={isWide}>
-        <ServiceSection isWide={isWide}>
+      <ServiceSection isWide={isWide}>
+        <div style={{ width: '90%', margin: '0 auto' }}>
           <div style={{ marginLeft: isWide ? 24 : 0 }}>
             <Fade top>
               <SectionTitle>What we do</SectionTitle>
             </Fade>
           </div>
-          <Service isWide={isWide}>
-            <div style={{ textAlign: 'center' }}>
-              <div style={{ maxWidth: '90%', margin: '0 auto' }}>
-                <Fade top>
-                  <Image src='/images/box.png' width={200} height={200} />
-                </Fade>
-                <h3>輸入販売事業</h3>
-                <p>
-                  国内にまだ入っていきていない、人々の暮らしをより豊かにする最先端の製品を独自のルートで輸入し、適正な価格で販売しております。
-                </p>
-              </div>
-            </div>
-            <div style={{ textAlign: 'center', marginTop: isWide ? 0 : 20 }}>
-              <div style={{ maxWidth: '90%', margin: '0 auto' }}>
-                <Fade top>
-                  <Image src='/images/dig.png' width={200} height={200} />
-                </Fade>
-                <h3>モノプロダクション事業</h3>
-                <p>
-                  世の中の消費者がまだ気づいていない潜在的な悩みを探し出し、それを解決出来るような商品を開発し、オリジナルブランドとして販売しております。
-                </p>
-              </div>
-            </div>
-          </Service>
-        </ServiceSection>
-      </CenterCotentContainer>
-      <ContactSection>
+          <ServiceItemContainer isWide={isWide}>
+            <ServiceItem isWide={isWide}>
+              <Fade top>
+                <Image src='/images/box.png' width={200} height={200} />
+              </Fade>
+              <h3>輸入販売事業</h3>
+              <p>
+                国内にまだ入っていきていない、人々の暮らしをより豊かにする最先端の製品を独自のルートで輸入し、適正な価格で販売しております。
+              </p>
+            </ServiceItem>
+
+            <ServiceItem isWide={isWide}>
+              <Fade top>
+                <Image src='/images/dig.png' width={200} height={200} />
+              </Fade>
+              <h3>モノプロダクション事業</h3>
+              <p>
+                世の中の消費者がまだ気づいていない潜在的な悩みを探し出し、それを解決出来るような商品を開発し、オリジナルブランドとして販売しております。
+              </p>
+            </ServiceItem>
+          </ServiceItemContainer>
+        </div>
+      </ServiceSection>
+
+      <ContactSection isWide={isWide}>
         <Fade top>
           <SectionTitle>Contact</SectionTitle>
           <Link href='/contact'>
@@ -138,43 +131,10 @@ const Main = styled.div`
   height: 100vh;
 `;
 
-const CenterCotentContainer = styled.div<{ isWide: boolean }>`
-  max-width: 90%;
-  min-height: 100%;
-  margin: 0 auto;
-  margin-bottom: ${(props) => (props.isWide ? '20%' : '50%')};
-`;
-
 const SectionTitle = styled.h2`
   font-size: 2.75rem;
-  padding: 1rem 2rem;
   position: relative;
-  text-align: center;
-
-  :before,
-  :after {
-    position: absolute;
-    top: 0;
-    content: '';
-    width: 8px;
-    height: 100%;
-    display: inline-block;
-  }
-
-  :before {
-    border-left: solid 2px red;
-    border-top: solid 2px red;
-    border-bottom: solid 2px red;
-    left: 0;
-  }
-
-  :after {
-    content: '';
-    border-top: solid 2px red;
-    border-right: solid 2px red;
-    border-bottom: solid 2px red;
-    right: 0;
-  }
+  text-align: 'center';
 `;
 
 const Mission = styled.div`
@@ -183,38 +143,59 @@ const Mission = styled.div`
   top: 40%;
 `;
 
-const AboutSection = styled.div`
-  margin-left: 20%;
-  position: relative;
-  height: 100vh;
+const AboutSection = styled.div<{ isWide: boolean }>`
+  width: 100%;
+  height: ${(props) => (props.isWide ? '100vh' : '80vh')};
   background-color: #fafafa;
-  border-radius: 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding-bottom: ${(props) => (props.isWide ? '15%' : '10%')};
+`;
+
+const About = styled.div<{ isWide: boolean }>`
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  margin-top: 5%;
-  margin-bottom: 15%;
+  text-align: center;
+  max-width: ${(props) => (props.isWide ? '80%' : '90%')};
+  margin: 0 auto;
+  margin-top: 15%;
 `;
 
 const ServiceSection = styled.div<{ isWide: boolean }>`
-  position: relative;
-  flex-direction: column;
-  height: 100vh;
+  padding-top: 25%;
+  width: 100%;
+  height: ${(props) => (props.isWide ? '100vh' : '90vh')};
+  min-height: 100%;
   display: flex;
+  flex-direction: column;
   justify-content: center;
-  align-items: ${(props) => (props.isWide ? 'flex-start' : 'center')};
+  padding-bottom: 25%;
 `;
 
-const Service = styled.div<{ isWide: boolean }>`
-  margin-top: 15%;
+const ServiceItemContainer = styled.div<{ isWide: boolean }>`
   display: flex;
   flex-direction: ${(props) => (props.isWide ? 'row' : 'column')};
+  justify-content: center;
+  align-items: center;
 `;
 
-const ContactSection = styled.div`
+const ServiceItem = styled.div<{ isWide: boolean }>`
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: ${(props) => (props.isWide ? '75%' : '90%')};
+  padding-right: 5%;
+  padding-left: 5%;
+`;
+
+const ContactSection = styled.div<{ isWide: boolean }>`
   position: relative;
-  height: 75vh;
+  height: ${(props) => (props.isWide ? '75vh' : '50vh')};
+  min-height: 100%;
   background-color: #fafafa;
   border-radius: 20px;
   display: flex;
@@ -224,9 +205,9 @@ const ContactSection = styled.div`
 `;
 
 const Contact = styled.a`
-  font-size: 1.6rem;
-  font-weight: 700;
-  line-height: 1.3;
+  font-size: 1.4rem;
+  font-weight: 500;
+  line-height: 1.1;
   position: relative;
   display: inline-block;
   cursor: pointer;
