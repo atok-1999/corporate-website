@@ -17,19 +17,20 @@ export default function Home() {
   useEffect(() => {
     if (!vantaEffect) {
       setVantaEffect(
-        GLOBE({
-          el: vantaRef.current,
-          THREE,
-          mouseControls: true,
-          touchControls: true,
-          gyroControls: false,
-          minHeight: 150,
-          minWidth: 150,
-          scale: 1.0,
-          scaleMobile: 1.0,
-          color2: 0x8ebaed,
-          backgroundColor: 0xffffff,
-        })
+        // GLOBE({
+        //   el: vantaRef.current,
+        //   THREE,
+        //   mouseControls: true,
+        //   touchControls: true,
+        //   gyroControls: false,
+        //   minHeight: 150,
+        //   minWidth: 150,
+        //   scale: 1.0,
+        //   scaleMobile: 1.0,
+        //   color2: 0x8ebaed,
+        //   backgroundColor: 0xffffff,
+        // })
+        0
       );
     }
     return () => {
@@ -145,12 +146,13 @@ const Mission = styled.div`
 
 const AboutSection = styled.div<{ isWide: boolean }>`
   width: 100%;
-  height: ${(props) => (props.isWide ? '95vh' : '80vh')};
+  min-height: ${(props) => (props.isWide ? '95vh' : '80vh')};
   background-color: #fafafa;
   display: flex;
   flex-direction: column;
   justify-content: center;
-  padding-bottom: ${(props) => (props.isWide ? '5%' : '10%')};
+  padding-top: ${(props) => (props.isWide ? '5%' : '20%')};
+  padding-bottom: ${(props) => (props.isWide ? '5%' : '20%')};
 `;
 
 const About = styled.div<{ isWide: boolean }>`
@@ -165,10 +167,9 @@ const About = styled.div<{ isWide: boolean }>`
 `;
 
 const ServiceSection = styled.div<{ isWide: boolean }>`
-  padding-top: ${(props) => (props.isWide ? '5%' : '30%')};
+  padding-top: ${(props) => (props.isWide ? '5%' : '20%')};
   width: 100%;
-  height: ${(props) => (props.isWide ? '95vh' : '90vh')};
-  min-height: 100%;
+  min-height: ${(props) => (props.isWide ? '95vh' : '90vh')};
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -194,10 +195,8 @@ const ServiceItem = styled.div<{ isWide: boolean }>`
 
 const ContactSection = styled.div<{ isWide: boolean }>`
   position: relative;
-  height: ${(props) => (props.isWide ? '75vh' : '50vh')};
-  min-height: 100%;
+  min-height: ${(props) => (props.isWide ? '75vh' : '50vh')};
   background-color: #fafafa;
-  border-radius: 20px;
   display: flex;
   flex-direction: column;
   justify-content: center;
