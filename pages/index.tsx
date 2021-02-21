@@ -129,7 +129,7 @@ export default function Home() {
 
 const Main = styled.div`
   position: relative;
-  height: 100vh;
+  min-height: 100vh;
 `;
 
 const SectionTitle = styled.h2`
@@ -138,8 +138,8 @@ const SectionTitle = styled.h2`
   text-align: 'center';
 `;
 
-const Mission = styled.div`
-  margin-left: 36px;
+const Mission = styled.div<{ isWide: boolean }>`
+  margin-left: ${(props) => (props.isWide ? '36px' : '24px')};
   position: absolute;
   top: 40%;
 `;
