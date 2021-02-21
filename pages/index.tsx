@@ -145,12 +145,12 @@ const Mission = styled.div`
 
 const AboutSection = styled.div<{ isWide: boolean }>`
   width: 100%;
-  height: ${(props) => (props.isWide ? '100vh' : '80vh')};
+  height: ${(props) => (props.isWide ? '95vh' : '80vh')};
   background-color: #fafafa;
   display: flex;
   flex-direction: column;
   justify-content: center;
-  padding-bottom: ${(props) => (props.isWide ? '15%' : '10%')};
+  padding-bottom: ${(props) => (props.isWide ? '5%' : '10%')};
 `;
 
 const About = styled.div<{ isWide: boolean }>`
@@ -165,14 +165,14 @@ const About = styled.div<{ isWide: boolean }>`
 `;
 
 const ServiceSection = styled.div<{ isWide: boolean }>`
-  padding-top: 25%;
+  padding-top: ${(props) => (props.isWide ? '5%' : '30%')};
   width: 100%;
-  height: ${(props) => (props.isWide ? '100vh' : '90vh')};
+  height: ${(props) => (props.isWide ? '95vh' : '90vh')};
   min-height: 100%;
   display: flex;
   flex-direction: column;
   justify-content: center;
-  padding-bottom: 25%;
+  padding-bottom: ${(props) => (props.isWide ? '5%' : '30%')};
 `;
 
 const ServiceItemContainer = styled.div<{ isWide: boolean }>`
