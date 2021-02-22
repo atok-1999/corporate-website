@@ -4,6 +4,7 @@ import Header from '../components/Header';
 import Footer from '../components/Footer';
 import AnimatedCursor from 'react-animated-cursor';
 import useMedia from 'use-media';
+import '../styles/global.css';
 
 function MyApp({ Component, pageProps }) {
   const isWide = useMedia({ minWidth: '521px' });

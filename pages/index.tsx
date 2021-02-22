@@ -64,7 +64,7 @@ export default function Home() {
           <div style={{ marginLeft: isWide ? 24 : 0 }}>
             <Fade left>
               <SectionTitle>01. About us</SectionTitle>
-              <span style={{ fontWeight: 600 }}>私たちについて.</span>
+              <div style={{ fontWeight: 600 }}>私たちについて.</div>
             </Fade>
           </div>
           <About isWide={isWide}>
@@ -96,7 +96,7 @@ export default function Home() {
           <div style={{ marginLeft: isWide ? 24 : 0 }}>
             <Fade left>
               <SectionTitle>02. What we do</SectionTitle>
-              <span style={{ fontWeight: 600 }}>事業内容.</span>
+              <div style={{ fontWeight: 600 }}>事業内容.</div>
             </Fade>
           </div>
           <ServiceItemContainer isWide={isWide}>
