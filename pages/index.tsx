@@ -46,7 +46,7 @@ export default function Home() {
       </Head>
 
       <Main ref={vantaRef}>
-        <Mission>
+        <Mission isWide={isWide}>
           <h1 style={{ fontSize: '3.5rem' }}>
             Connecting people with our products
           </h1>
@@ -117,9 +117,9 @@ export default function Home() {
         <Fade top>
           <SectionTitle>Contact</SectionTitle>
           <Link href='/contact'>
-            <Contact>
+            <ContactButton>
               <span>お問い合わせ・ご相談はこちらから</span>
-            </Contact>
+            </ContactButton>
           </Link>
         </Fade>
       </ContactSection>
@@ -203,7 +203,7 @@ const ContactSection = styled.div<{ isWide: boolean }>`
   align-items: center;
 `;
 
-const Contact = styled.a`
+const ContactButton = styled.a`
   font-size: 1.4rem;
   font-weight: 500;
   line-height: 1.1;

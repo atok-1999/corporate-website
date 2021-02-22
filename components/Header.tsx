@@ -58,6 +58,9 @@ const Header = () => {
   const BugerMenu = () => {
     return (
       <Menu styles={burgerStyles} right>
+        <Link href={'/'}>
+          <Anchor>Home</Anchor>
+        </Link>
         <Link href={'/about'}>
           <Anchor>About</Anchor>
         </Link>
@@ -74,7 +77,11 @@ const Header = () => {
   return (
     <div style={{ position: 'relative', zIndex: 100 }}>
       <CorporateName>
-        <h2>Company Name</h2>
+        <Link href={'/'}>
+          <Anchor>
+            <h2>Company Name</h2>
+          </Anchor>
+        </Link>
       </CorporateName>
       {isWide ? (
         <List>
