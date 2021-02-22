@@ -24,12 +24,21 @@ export default class MyDocument extends Document<Props> {
         <Head>
           <meta charSet='utf-8' />
           {this.props.styleTags}
+          <link rel='preconnect' href='https://fonts.gstatic.com' />
+          <link
+            href='https://fonts.googleapis.com/css2?family=Oswald&display=swap'
+            rel='stylesheet'
+          />
           <link
             href='https://fonts.googleapis.com/css2?family=Karla:wght@500&display=swap'
             rel='stylesheet'
-          ></link>
+          />
         </Head>
-        <body style={{ margin: 0, fontFamily: 'Karla, sans-serif' }}>
+        <body
+          style={{
+            margin: 0,
+          }}
+        >
           <Main />
           <NextScript />
         </body>

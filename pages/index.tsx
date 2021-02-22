@@ -17,20 +17,19 @@ export default function Home() {
   useEffect(() => {
     if (!vantaEffect) {
       setVantaEffect(
-        // GLOBE({
-        //   el: vantaRef.current,
-        //   THREE,
-        //   mouseControls: true,
-        //   touchControls: true,
-        //   gyroControls: false,
-        //   minHeight: 150,
-        //   minWidth: 150,
-        //   scale: 1.0,
-        //   scaleMobile: 1.0,
-        //   color2: 0x8ebaed,
-        //   backgroundColor: 0xffffff,
-        // })
-        0
+        GLOBE({
+          el: vantaRef.current,
+          THREE,
+          mouseControls: true,
+          touchControls: true,
+          gyroControls: false,
+          minHeight: 150,
+          minWidth: 150,
+          scale: 1.0,
+          scaleMobile: 1.0,
+          color2: 0x8ebaed,
+          backgroundColor: 0xffffff,
+        })
       );
     }
     return () => {
@@ -47,7 +46,12 @@ export default function Home() {
 
       <Main ref={vantaRef}>
         <Mission isWide={isWide}>
-          <h1 style={{ fontSize: isWide ? '3.5rem' : '2.5rem' }}>
+          <h1
+            style={{
+              fontSize: isWide ? '3.5rem' : '2.5rem',
+              fontFamily: 'Karla',
+            }}
+          >
             Connecting people with our products
           </h1>
 
@@ -59,14 +63,19 @@ export default function Home() {
         <div style={{ width: '90%', margin: '0 auto' }}>
           <div style={{ marginLeft: isWide ? 24 : 0 }}>
             <Fade top>
-              <SectionTitle>About us</SectionTitle>
+              <SectionTitle>01. About us</SectionTitle>
+              <span style={{ fontWeight: 600 }}>私たちについて.</span>
             </Fade>
           </div>
           <About isWide={isWide}>
             <Fade top>
-              <Image src='/images/hand-shake.png' width={200} height={200} />
+              <Image
+                src='/images/city-view-whole1.png'
+                width={700}
+                height={310}
+              />
             </Fade>
-            <p>
+            <p style={{ marginTop: '2rem' }}>
               良いモノだけど、知られていないものがある。
               良いモノだけど、伝わりにくいものがある。
               良いモノだけど、隠れてしまっているものがある。 私たちは、
@@ -86,13 +95,18 @@ export default function Home() {
         <div style={{ width: '90%', margin: '0 auto' }}>
           <div style={{ marginLeft: isWide ? 24 : 0 }}>
             <Fade top>
-              <SectionTitle>What we do</SectionTitle>
+              <SectionTitle>02. What we do</SectionTitle>
+              <span style={{ fontWeight: 600 }}>事業内容.</span>
             </Fade>
           </div>
           <ServiceItemContainer isWide={isWide}>
             <ServiceItem isWide={isWide}>
               <Fade top>
-                <Image src='/images/box.png' width={200} height={200} />
+                <Image
+                  src='/images/delivery-package1.png'
+                  width={isWide ? 400 : 300}
+                  height={isWide ? 400 : 300}
+                />
               </Fade>
               <h3>輸入販売事業</h3>
               <p>
@@ -102,7 +116,11 @@ export default function Home() {
 
             <ServiceItem isWide={isWide}>
               <Fade top>
-                <Image src='/images/dig.png' width={200} height={200} />
+                <Image
+                  src='/images/discussing-idea1.png'
+                  width={isWide ? 400 : 300}
+                  height={isWide ? 400 : 300}
+                />
               </Fade>
               <h3>モノプロダクション事業</h3>
               <p>
@@ -114,14 +132,13 @@ export default function Home() {
       </ServiceSection>
 
       <ContactSection isWide={isWide}>
-        <Fade top>
-          <SectionTitle>Contact</SectionTitle>
-          <Link href='/contact'>
-            <ContactButton>
-              <span>お問い合わせ・ご相談はこちらから</span>
-            </ContactButton>
-          </Link>
-        </Fade>
+        <SectionTitle>03. Contact</SectionTitle>
+
+        <Link href='/contact'>
+          <ContactButton isWide={isWide}>
+            <span>お問い合わせ・ご相談はこちらから</span>
+          </ContactButton>
+        </Link>
       </ContactSection>
     </div>
   );
@@ -136,6 +153,10 @@ const SectionTitle = styled.h2`
   font-size: 2.75rem;
   position: relative;
   text-align: 'center';
+  font-family: 'Oswald';
+  letter-spacing: 0.1rem;
+  text-transform: uppercase;
+  margin-bottom: 0;
 `;
 
 const Mission = styled.div<{ isWide: boolean }>`
@@ -164,7 +185,7 @@ const About = styled.div<{ isWide: boolean }>`
   text-align: center;
   max-width: ${(props) => (props.isWide ? '80%' : '90%')};
   margin: 0 auto;
-  margin-top: 15%;
+  margin-top: ${(props) => (props.isWide ? '5%' : '15%')};
 `;
 
 const ServiceSection = styled.div<{ isWide: boolean }>`
@@ -174,7 +195,7 @@ const ServiceSection = styled.div<{ isWide: boolean }>`
   display: flex;
   flex-direction: column;
   justify-content: center;
-  padding-bottom: ${(props) => (props.isWide ? '5%' : '30%')};
+  padding-bottom: ${(props) => (props.isWide ? '15%' : '30%')};
 `;
 
 const ServiceItemContainer = styled.div<{ isWide: boolean }>`
@@ -182,7 +203,7 @@ const ServiceItemContainer = styled.div<{ isWide: boolean }>`
   flex-direction: ${(props) => (props.isWide ? 'row' : 'column')};
   justify-content: center;
   align-items: center;
-  margin-top:${(props) => (props.isWide ? '15%' : '10%')};
+  margin-top: ${(props) => (props.isWide ? '10%' : '0%')};
 `;
 
 const ServiceItem = styled.div<{ isWide: boolean }>`
@@ -208,10 +229,11 @@ const ContactSection = styled.div<{ isWide: boolean }>`
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  padding-bottom: 10%;
 `;
 
-const ContactButton = styled.a`
-  font-size: 1.4rem;
+const ContactButton = styled.a<{ isWide: boolean }>`
+  font-size: ${(props) => (props.isWide ? '1.4rem' : '1.1rem')};
   font-weight: 500;
   line-height: 1.1;
   position: relative;

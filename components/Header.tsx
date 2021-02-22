@@ -130,6 +130,7 @@ export const Anchor = styled.a`
   position: relative;
   text-decoration: none;
   padding-bottom: 12px;
+  font-family: 'Oswald';
 
   &:before,
   &:after {

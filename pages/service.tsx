@@ -10,13 +10,26 @@ const Service = () => {
   return (
     <PageContainer>
       <Fade top>
-        <h1 style={{ fontSize: '3rem', textAlign: 'center' }}>Service</h1>
+        <h1
+          style={{
+            fontSize: '3rem',
+            textAlign: 'center',
+            fontFamily: 'Karla',
+            marginBottom: 0,
+          }}
+        >
+          Service
+        </h1>
       </Fade>
       <div style={{ display: 'flex' }}>
         <ServiceItemContainer isWide={isWide}>
           <ServiceItem isWide={isWide}>
             <Fade top>
-              <Image src='/images/box.png' width={200} height={200} />
+              <Image
+                src='/images/delivery-package1.png'
+                width={isWide ? 400 : 250}
+                height={isWide ? 400 : 250}
+              />
             </Fade>
             <h3>輸入販売事業</h3>
             <p>
@@ -26,7 +39,11 @@ const Service = () => {
 
           <ServiceItem isWide={isWide}>
             <Fade top>
-              <Image src='/images/dig.png' width={200} height={200} />
+              <Image
+                src='/images/discussing-idea1.png'
+                width={isWide ? 400 : 250}
+                height={isWide ? 400 : 250}
+              />
             </Fade>
             <h3>モノプロダクション事業</h3>
             <p>
@@ -54,6 +71,7 @@ const ServiceItemContainer = styled.div<{ isWide: boolean }>`
   flex-direction: ${(props) => (props.isWide ? 'row' : 'column')};
   justify-content: center;
   align-items: center;
+  margin-top: ${(props) => (props.isWide ? '100px' : '0px')};
 `;
 
 const ServiceItem = styled.div<{ isWide: boolean }>`
@@ -64,6 +82,11 @@ const ServiceItem = styled.div<{ isWide: boolean }>`
   width: ${(props) => (props.isWide ? '75%' : '90%')};
   padding-right: 5%;
   padding-left: 5%;
+  margin-top: ${(props) => (props.isWide ? '0%' : '20%')};
+
+  > p {
+    margin: 0;
+  }
 `;
 
 export default Service;

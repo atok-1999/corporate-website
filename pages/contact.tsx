@@ -7,7 +7,11 @@ const Contact = () => {
   return (
     <ContactContainer>
       <Fade top>
-        <h1 style={{ fontSize: '3rem', textAlign: 'center' }}>Contact</h1>
+        <h1
+          style={{ fontSize: '3rem', textAlign: 'center', fontFamily: 'Karla' }}
+        >
+          Contact
+        </h1>
         <div
           style={{
             textAlign: 'center',
