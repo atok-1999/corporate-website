@@ -17,19 +17,20 @@ export default function Home() {
   useEffect(() => {
     if (!vantaEffect) {
       setVantaEffect(
-        GLOBE({
-          el: vantaRef.current,
-          THREE,
-          mouseControls: true,
-          touchControls: true,
-          gyroControls: false,
-          minHeight: 150,
-          minWidth: 150,
-          scale: 1.0,
-          scaleMobile: 1.0,
-          color2: 0x8ebaed,
-          backgroundColor: 0xffffff,
-        })
+        // GLOBE({
+        //   el: vantaRef.current,
+        //   THREE,
+        //   mouseControls: true,
+        //   touchControls: true,
+        //   gyroControls: false,
+        //   minHeight: 150,
+        //   minWidth: 150,
+        //   scale: 1.0,
+        //   scaleMobile: 1.0,
+        //   color2: 0x8ebaed,
+        //   backgroundColor: 0xffffff,
+        // })
+        0
       );
     }
     return () => {
@@ -151,8 +152,8 @@ const AboutSection = styled.div<{ isWide: boolean }>`
   display: flex;
   flex-direction: column;
   justify-content: center;
-  padding-top: ${(props) => (props.isWide ? '5%' : '20%')};
-  padding-bottom: ${(props) => (props.isWide ? '5%' : '20%')};
+  padding-top: ${(props) => (props.isWide ? '5%' : '0%')};
+  padding-bottom: ${(props) => (props.isWide ? '5%' : '10%')};
 `;
 
 const About = styled.div<{ isWide: boolean }>`
@@ -167,7 +168,7 @@ const About = styled.div<{ isWide: boolean }>`
 `;
 
 const ServiceSection = styled.div<{ isWide: boolean }>`
-  padding-top: ${(props) => (props.isWide ? '5%' : '20%')};
+  padding-top: ${(props) => (props.isWide ? '5%' : '10%')};
   width: 100%;
   min-height: ${(props) => (props.isWide ? '95vh' : '90vh')};
   display: flex;
@@ -181,6 +182,7 @@ const ServiceItemContainer = styled.div<{ isWide: boolean }>`
   flex-direction: ${(props) => (props.isWide ? 'row' : 'column')};
   justify-content: center;
   align-items: center;
+  margin-top:${(props) => (props.isWide ? '15%' : '10%')};
 `;
 
 const ServiceItem = styled.div<{ isWide: boolean }>`
@@ -191,6 +193,11 @@ const ServiceItem = styled.div<{ isWide: boolean }>`
   width: ${(props) => (props.isWide ? '75%' : '90%')};
   padding-right: 5%;
   padding-left: 5%;
+  margin-top: ${(props) => (props.isWide ? '0%' : '20%')};
+
+  > p {
+    margin: 0;
+  }
 `;
 
 const ContactSection = styled.div<{ isWide: boolean }>`
