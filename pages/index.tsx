@@ -62,13 +62,13 @@ export default function Home() {
       <AboutSection isWide={isWide}>
         <div style={{ width: '90%', margin: '0 auto' }}>
           <div style={{ marginLeft: isWide ? 24 : 0 }}>
-            <Fade top>
+            <Fade left>
               <SectionTitle>01. About us</SectionTitle>
               <span style={{ fontWeight: 600 }}>私たちについて.</span>
             </Fade>
           </div>
           <About isWide={isWide}>
-            <Fade top>
+            <Fade left>
               <Image
                 src='/images/city-view-whole1.png'
                 width={700}
@@ -94,14 +94,14 @@ export default function Home() {
       <ServiceSection isWide={isWide}>
         <div style={{ width: '90%', margin: '0 auto' }}>
           <div style={{ marginLeft: isWide ? 24 : 0 }}>
-            <Fade top>
+            <Fade left>
               <SectionTitle>02. What we do</SectionTitle>
               <span style={{ fontWeight: 600 }}>事業内容.</span>
             </Fade>
           </div>
           <ServiceItemContainer isWide={isWide}>
             <ServiceItem isWide={isWide}>
-              <Fade top>
+              <Fade left>
                 <Image
                   src='/images/delivery-package1.png'
                   width={isWide ? 400 : 300}
@@ -115,7 +115,7 @@ export default function Home() {
             </ServiceItem>
 
             <ServiceItem isWide={isWide}>
-              <Fade top>
+              <Fade left>
                 <Image
                   src='/images/discussing-idea1.png'
                   width={isWide ? 400 : 300}

@@ -1,5 +1,6 @@
 import Document, { Html, Head, Main, NextScript } from 'next/document';
 import { ServerStyleSheet } from 'styled-components';
+import '../styles/global.css';
 
 type Props = {
   styleTags: any;
@@ -34,11 +35,7 @@ export default class MyDocument extends Document<Props> {
             rel='stylesheet'
           />
         </Head>
-        <body
-          style={{
-            margin: 0,
-          }}
-        >
+        <body>
           <Main />
           <NextScript />
         </body>
