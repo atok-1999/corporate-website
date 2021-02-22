@@ -48,8 +48,9 @@ export default function Home() {
         <Mission isWide={isWide}>
           <h1
             style={{
-              fontSize: isWide ? '3.5rem' : '2.5rem',
+              fontSize: isWide ? '3.5rem' : '3rem',
               fontFamily: 'Karla',
+              letterSpacing: isWide ? 'normal' : '-.7px',
             }}
           >
             Connecting people with our products
@@ -162,7 +163,7 @@ const SectionTitle = styled.h2`
 const Mission = styled.div<{ isWide: boolean }>`
   margin-left: ${(props) => (props.isWide ? '36px' : '24px')};
   position: absolute;
-  top: ${(props) => (props.isWide ? '40%' : '30%')};
+  top: ${(props) => (props.isWide ? '40%' : '25%')};
   line-height: 1.3;
 `;
 

@@ -126,7 +126,7 @@ const SubmitButton = styled.div`
   color: #000;
   border-radius: 0.5rem;
   overflow: hidden;
-  padding: 1.5rem 1rem;
+  padding: 1.1rem 1rem;
   border-radius: 0;
   background: #fafafa;
   margin-top: 2rem;
