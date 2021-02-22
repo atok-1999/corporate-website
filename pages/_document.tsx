@@ -29,7 +29,7 @@ export default class MyDocument extends Document<Props> {
             rel='stylesheet'
           ></link>
         </Head>
-        <body style={{ margin: 0, fontFamily: 'Karla, sans-serif' }}>
+        <body style={{ margin: 0 }}>
           <Main />
           <NextScript />
         </body>
