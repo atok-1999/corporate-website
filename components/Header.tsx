@@ -76,7 +76,7 @@ const Header = () => {
 
   return (
     <div style={{ position: 'relative', zIndex: 100 }}>
-      <CorporateName>
+      <CorporateName isWide={isWide}>
         <Link href={'/'}>
           <Anchor>
             <h2>Company Name</h2>
@@ -108,9 +108,9 @@ const Header = () => {
   );
 };
 
-const CorporateName = styled.div`
+const CorporateName = styled.div<{ isWide: boolean }>`
   position: absolute;
-  left: 40px;
+  left: ${(props) => (props.isWide ? '40px' : '24px')};
 `;
 
 const List = styled.ul`

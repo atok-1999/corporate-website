@@ -17,19 +17,20 @@ export default function Home() {
   useEffect(() => {
     if (!vantaEffect) {
       setVantaEffect(
-        GLOBE({
-          el: vantaRef.current,
-          THREE,
-          mouseControls: true,
-          touchControls: true,
-          gyroControls: false,
-          minHeight: 150,
-          minWidth: 150,
-          scale: 1.0,
-          scaleMobile: 1.0,
-          color2: 0x8ebaed,
-          backgroundColor: 0xffffff,
-        })
+        // GLOBE({
+        //   el: vantaRef.current,
+        //   THREE,
+        //   mouseControls: true,
+        //   touchControls: true,
+        //   gyroControls: false,
+        //   minHeight: 150,
+        //   minWidth: 150,
+        //   scale: 1.0,
+        //   scaleMobile: 1.0,
+        //   color2: 0x8ebaed,
+        //   backgroundColor: 0xffffff,
+        // })
+        0
       );
     }
     return () => {
