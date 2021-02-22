@@ -110,7 +110,7 @@ const Header = () => {
 
 const CorporateName = styled.div<{ isWide: boolean }>`
   position: absolute;
-  left: ${(props) => (props.isWide ? '40px' : '24px')};
+  left: ${(props) => (props.isWide ? '40px' : '16px')};
 `;
 
 const List = styled.ul`
