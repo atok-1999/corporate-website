@@ -49,8 +49,7 @@ export default function Home() {
           <h1
             style={{
               fontSize: isWide ? '3.5rem' : '3rem',
-              fontFamily: 'Karla',
-              letterSpacing: isWide ? 'normal' : '-.7px',
+              fontFamily: 'Roboto',
             }}
           >
             Connecting people with our products

@@ -26,7 +26,7 @@ const About = () => {
   return (
     <AboutContainer>
       <Fade top>
-        <h1 style={{ fontSize: '3rem', fontFamily: 'Karla' }}>About</h1>
+        <h1 style={{ fontSize: '3rem', fontFamily: 'Roboto' }}>About</h1>
 
         <div
           style={{ textAlign: 'center', maxWidth: '75%', marginBottom: 120 }}

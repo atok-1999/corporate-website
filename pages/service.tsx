@@ -14,7 +14,7 @@ const Service = () => {
           style={{
             fontSize: '3rem',
             textAlign: 'center',
-            fontFamily: 'Karla',
+            fontFamily: 'Roboto',
             marginBottom: 0,
           }}
         >

@@ -8,7 +8,11 @@ const Contact = () => {
     <ContactContainer>
       <Fade top>
         <h1
-          style={{ fontSize: '3rem', textAlign: 'center', fontFamily: 'Karla' }}
+          style={{
+            fontSize: '3rem',
+            textAlign: 'center',
+            fontFamily: 'Roboto',
+          }}
         >
           Contact
         </h1>
