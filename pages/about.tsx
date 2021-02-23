@@ -2,9 +2,12 @@ import React from 'react';
 import styled from 'styled-components';
 import Fade from 'react-reveal/Fade';
 import MuiTable from 'mui-table';
-import Image from 'next/image';
+import { ImageContainer } from '../pages/index';
+import useMedia from 'use-media';
 
 const About = () => {
+  const isWide = useMedia({ minWidth: '521px' });
+
   const tableData = [
     {
       title: '会社名',
@@ -31,9 +34,22 @@ const About = () => {
       </Fade>
 
       <div style={{ textAlign: 'center', maxWidth: '75%', marginBottom: 120 }}>
-        <Image src='/images/city-view-whole1.png' width={700} height={310} />
+        <ImageContainer
+          customSize={'100%'}
+          isWide={isWide}
+          customMaxSize={'700px'}
+        >
+          <img
+            src='/images/city-view-whole1.png'
+            width={'100%'}
+            height={'100%'}
+            style={{ display: 'block' }}
+          />
+        </ImageContainer>
 
-        <p>人と人をモノで繋ぐをミッションに私たちは活動しています。</p>
+        <p style={{ marginTop: 50 }}>
+          人と人をモノで繋ぐをミッションに私たちは活動しています。
+        </p>
         <p>
           良いモノだけど、知られていないものがある。
           良いモノだけど、伝わりにくいものがある。

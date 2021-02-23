@@ -6,7 +6,6 @@ import { useEffect, useRef, useState } from 'react';
 import GLOBE from 'vanta/dist/vanta.globe.min';
 import * as THREE from 'three';
 import Fade from 'react-reveal/Fade';
-import Image from 'next/image';
 import useMedia from 'use-media';
 
 export default function Home() {
@@ -71,11 +70,18 @@ export default function Home() {
           </div>
           <About isWide={isWide}>
             <Fade left>
-              <Image
-                src='/images/city-view-whole1.png'
-                width={700}
-                height={310}
-              />
+              <ImageContainer
+                customSize={'100%'}
+                isWide={isWide}
+                customMaxSize={'700px'}
+              >
+                <img
+                  src='/images/city-view-whole1.png'
+                  width={'100%'}
+                  height={'100%'}
+                  style={{ display: 'block' }}
+                />
+              </ImageContainer>
             </Fade>
             <p style={{ marginTop: '2rem' }}>
               良いモノだけど、知られていないものがある。
@@ -104,28 +110,34 @@ export default function Home() {
           <ServiceItemContainer isWide={isWide}>
             <ServiceItem isWide={isWide}>
               <Fade left>
-                <Image
-                  src='/images/delivery-package1.png'
-                  width={isWide ? 400 : 300}
-                  height={isWide ? 400 : 300}
-                />
+                <ImageContainer isWide={isWide}>
+                  <img
+                    src='/images/delivery-package2.webp'
+                    width={'100%'}
+                    height={'100%'}
+                    style={{ display: 'block' }}
+                  />
+                </ImageContainer>
               </Fade>
               <h3>輸入販売事業</h3>
-              <p>
+              <p style={{ textAlign: 'center' }}>
                 国内にまだ入っていきていない、人々の暮らしをより豊かにする最先端の製品を独自のルートで輸入し、適正な価格で販売しております。
               </p>
             </ServiceItem>
 
             <ServiceItem isWide={isWide}>
               <Fade left>
-                <Image
-                  src='/images/discussing-idea1.png'
-                  width={isWide ? 400 : 300}
-                  height={isWide ? 400 : 300}
-                />
+                <ImageContainer isWide={isWide}>
+                  <img
+                    src='/images/discussing-idea2.webp'
+                    width={'100%'}
+                    height={'100%'}
+                    style={{ display: 'block' }}
+                  />
+                </ImageContainer>
               </Fade>
               <h3>モノプロダクション事業</h3>
-              <p>
+              <p style={{ textAlign: 'center' }}>
                 世の中の消費者がまだ気づいていない潜在的な悩みを探し出し、それを解決出来るような商品を開発し、オリジナルブランドとして販売しております。
               </p>
             </ServiceItem>
@@ -150,6 +162,23 @@ export default function Home() {
     </div>
   );
 }
+
+export const ImageContainer = styled.div<{
+  isWide: boolean;
+  customSize?: string;
+  customMaxSize?: string;
+}>`
+  box-shadow: 0px 8px 16px -2px rgba(10, 10, 10, 0.1),
+    16px 13px 0px 1px rgba(0, 0, 0, 0.2);
+  height: ${(props) =>
+    props.customSize ? props.customSize : props.isWide ? '100%' : '70%'};
+  width: ${(props) =>
+    props.customSize ? props.customSize : props.isWide ? '100%' : '70%'};
+  max-width: ${(props) =>
+    props.customMaxSize ? props.customMaxSize : '350px'};
+  margin: 0 auto;
+  margin-bottom: 20px;
+`;
 
 const Main = styled.div`
   position: relative;
@@ -209,7 +238,7 @@ const ServiceItemContainer = styled.div<{ isWide: boolean }>`
   display: flex;
   flex-direction: ${(props) => (props.isWide ? 'row' : 'column')};
   justify-content: center;
-  align-items: center;
+  align-items: flex-start;
   margin-top: ${(props) => (props.isWide ? '10%' : '0%')};
 `;
 

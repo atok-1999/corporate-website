@@ -25,25 +25,25 @@ const Service = () => {
         <ServiceItemContainer isWide={isWide}>
           <ServiceItem isWide={isWide}>
             <Image
-              src='/images/delivery-package1.png'
+              src='/images/delivery-package2.webp'
               width={isWide ? 400 : 250}
               height={isWide ? 400 : 250}
             />
 
             <h3>輸入販売事業</h3>
-            <p>
+            <p style={{ textAlign: 'center' }}>
               国内にまだ入っていきていない、人々の暮らしをより豊かにする最先端の製品を独自のルートで輸入し、適正な価格で販売しております。
             </p>
           </ServiceItem>
 
           <ServiceItem isWide={isWide}>
             <Image
-              src='/images/discussing-idea1.png'
+              src='/images/discussing-idea2.webp'
               width={isWide ? 400 : 250}
               height={isWide ? 400 : 250}
             />
             <h3>モノプロダクション事業</h3>
-            <p>
+            <p style={{ textAlign: 'center' }}>
               世の中の消費者がまだ気づいていない潜在的な悩みを探し出し、それを解決出来るような商品を開発し、オリジナルブランドとして販売しております。
             </p>
           </ServiceItem>
