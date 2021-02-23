@@ -17,19 +17,20 @@ export default function Home() {
   useEffect(() => {
     if (!vantaEffect) {
       setVantaEffect(
-        GLOBE({
-          el: vantaRef.current,
-          THREE,
-          mouseControls: true,
-          touchControls: true,
-          gyroControls: false,
-          minHeight: 150,
-          minWidth: 150,
-          scale: 1.0,
-          scaleMobile: 1.0,
-          color2: 0x8ebaed,
-          backgroundColor: 0xffffff,
-        })
+        // GLOBE({
+        //   el: vantaRef.current,
+        //   THREE,
+        //   mouseControls: true,
+        //   touchControls: true,
+        //   gyroControls: false,
+        //   minHeight: 150,
+        //   minWidth: 150,
+        //   scale: 1.0,
+        //   scaleMobile: 1.0,
+        //   color2: 0x8ebaed,
+        //   backgroundColor: 0xffffff,
+        // })
+        0
       );
     }
     return () => {
@@ -55,7 +56,9 @@ export default function Home() {
             Connecting people with our products
           </h1>
 
-          <p>人と人をモノで繋ぐをミッションに私たちは活動しています。</p>
+          <p style={{ fontWeight: 'bold', color: 'grey' }}>
+            人と人をモノで繋ぐをミッションに私たちは活動しています。
+          </p>
         </Mission>
       </Main>
 
@@ -63,7 +66,7 @@ export default function Home() {
         <div style={{ width: '90%', margin: '0 auto' }}>
           <div style={{ marginLeft: isWide ? 24 : 0 }}>
             <Fade left>
-              <SectionTitle>01. About us</SectionTitle>
+              <SectionTitle isWide={isWide}>01. About us</SectionTitle>
               <div style={{ fontWeight: 600 }}>私たちについて.</div>
             </Fade>
           </div>
@@ -83,7 +86,7 @@ export default function Home() {
               人(生産者)と人(消費者)をモノでつなぐ、Company Nameです。
             </p>
             <div style={{ marginTop: 35 }}>
-              <Link href={'about/'}>
+              <Link href={'/about'}>
                 <Anchor>READ MORE</Anchor>
               </Link>
             </div>
@@ -95,7 +98,7 @@ export default function Home() {
         <div style={{ width: '90%', margin: '0 auto' }}>
           <div style={{ marginLeft: isWide ? 24 : 0 }}>
             <Fade left>
-              <SectionTitle>02. What we do</SectionTitle>
+              <SectionTitle isWide={isWide}>02. What we do</SectionTitle>
               <div style={{ fontWeight: 600 }}>事業内容.</div>
             </Fade>
           </div>
@@ -128,11 +131,16 @@ export default function Home() {
               </p>
             </ServiceItem>
           </ServiceItemContainer>
+          <div style={{ marginTop: isWide ? 100 : 60, textAlign: 'center' }}>
+            <Link href={'/service'}>
+              <Anchor>READ MORE</Anchor>
+            </Link>
+          </div>
         </div>
       </ServiceSection>
 
       <ContactSection isWide={isWide}>
-        <SectionTitle>03. Contact</SectionTitle>
+        <SectionTitle isWide={isWide}>03. Contact</SectionTitle>
 
         <Link href='/contact'>
           <ContactButton isWide={isWide}>
@@ -149,12 +157,11 @@ const Main = styled.div`
   min-height: 100vh;
 `;
 
-const SectionTitle = styled.h2`
-  font-size: 2.75rem;
+const SectionTitle = styled.h2<{ isWide: boolean }>`
+  font-size: ${(props) => (props.isWide ? '2.75rem' : '2.3rem')};
   position: relative;
   text-align: 'center';
   font-family: 'Oswald';
-  letter-spacing: 0.1rem;
   text-transform: uppercase;
   margin-bottom: 0;
 `;
@@ -196,7 +203,7 @@ const ServiceSection = styled.div<{ isWide: boolean }>`
   display: flex;
   flex-direction: column;
   justify-content: center;
-  padding-bottom: ${(props) => (props.isWide ? '15%' : '30%')};
+  padding-bottom: ${(props) => (props.isWide ? '5%' : '10%')};
 `;
 
 const ServiceItemContainer = styled.div<{ isWide: boolean }>`
