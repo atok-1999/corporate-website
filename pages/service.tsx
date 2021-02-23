@@ -24,13 +24,12 @@ const Service = () => {
       <div style={{ display: 'flex' }}>
         <ServiceItemContainer isWide={isWide}>
           <ServiceItem isWide={isWide}>
-            <Fade top>
-              <Image
-                src='/images/delivery-package1.png'
-                width={isWide ? 400 : 250}
-                height={isWide ? 400 : 250}
-              />
-            </Fade>
+            <Image
+              src='/images/delivery-package1.png'
+              width={isWide ? 400 : 250}
+              height={isWide ? 400 : 250}
+            />
+
             <h3>輸入販売事業</h3>
             <p>
               国内にまだ入っていきていない、人々の暮らしをより豊かにする最先端の製品を独自のルートで輸入し、適正な価格で販売しております。
@@ -38,13 +37,11 @@ const Service = () => {
           </ServiceItem>
 
           <ServiceItem isWide={isWide}>
-            <Fade top>
-              <Image
-                src='/images/discussing-idea1.png'
-                width={isWide ? 400 : 250}
-                height={isWide ? 400 : 250}
-              />
-            </Fade>
+            <Image
+              src='/images/discussing-idea1.png'
+              width={isWide ? 400 : 250}
+              height={isWide ? 400 : 250}
+            />
             <h3>モノプロダクション事業</h3>
             <p>
               世の中の消費者がまだ気づいていない潜在的な悩みを探し出し、それを解決出来るような商品を開発し、オリジナルブランドとして販売しております。

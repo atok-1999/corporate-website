@@ -16,21 +16,21 @@ const Contact = () => {
         >
           Contact
         </h1>
-        <div
-          style={{
-            textAlign: 'center',
-            maxWidth: '75%',
-            margin: '0 auto',
-            marginBottom: 50,
-          }}
-        >
-          <p>
-            ご依頼やご相談、サービスについてのご質問やご要望がございましたら、下記フォームよりお気軽にお問い合わせください。
-            <br />
-            送付いただいた内容を確認の上、担当者からご連絡させていただきます。
-          </p>
-        </div>
       </Fade>
+      <div
+        style={{
+          textAlign: 'center',
+          maxWidth: '75%',
+          margin: '0 auto',
+          marginBottom: 50,
+        }}
+      >
+        <p>
+          ご依頼やご相談、サービスについてのご質問やご要望がございましたら、下記フォームよりお気軽にお問い合わせください。
+          <br />
+          送付いただいた内容を確認の上、担当者からご連絡させていただきます。
+        </p>
+      </div>
 
       <Form />
     </ContactContainer>

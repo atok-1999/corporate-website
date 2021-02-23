@@ -2,6 +2,7 @@ import React from 'react';
 import styled from 'styled-components';
 import Fade from 'react-reveal/Fade';
 import MuiTable from 'mui-table';
+import Image from 'next/image';
 
 const About = () => {
   const tableData = [
@@ -27,31 +28,31 @@ const About = () => {
     <AboutContainer>
       <Fade top>
         <h1 style={{ fontSize: '3rem', fontFamily: 'Roboto' }}>About</h1>
-
-        <div
-          style={{ textAlign: 'center', maxWidth: '75%', marginBottom: 120 }}
-        >
-          <p>人と人をモノで繋ぐをミッションに私たちは活動しています。</p>
-          <p>
-            良いモノだけど、知られていないものがある。
-            良いモノだけど、伝わりにくいものがある。
-            良いモノだけど、隠れてしまっているものがある。 私たちは、
-            そんな可能性を秘めた原石を みつけ、みがき、ひろげ、
-            人(生産者)と人(消費者)をモノでつなぐ、Company Nameです。
-          </p>
-        </div>
       </Fade>
 
-      <Fade top>
-        <div style={{ textAlign: 'center' }}>
+      <div style={{ textAlign: 'center', maxWidth: '75%', marginBottom: 120 }}>
+        <Image src='/images/city-view-whole1.png' width={700} height={310} />
+
+        <p>人と人をモノで繋ぐをミッションに私たちは活動しています。</p>
+        <p>
+          良いモノだけど、知られていないものがある。
+          良いモノだけど、伝わりにくいものがある。
+          良いモノだけど、隠れてしまっているものがある。 私たちは、
+          そんな可能性を秘めた原石を みつけ、みがき、ひろげ、
+          人(生産者)と人(消費者)をモノでつなぐ、Company Nameです。
+        </p>
+      </div>
+
+      <div style={{ textAlign: 'center' }}>
+        <Fade top>
           <h2 style={{ fontSize: '2.5rem' }}>企業概要</h2>
-          <MuiTable
-            data={tableData}
-            columns={[{ name: 'title' }, { name: 'data' }]}
-            style={{ backgroundColor: 'white' }}
-          />
-        </div>
-      </Fade>
+        </Fade>
+        <MuiTable
+          data={tableData}
+          columns={[{ name: 'title' }, { name: 'data' }]}
+          style={{ backgroundColor: 'white' }}
+        />
+      </div>
     </AboutContainer>
   );
 };
